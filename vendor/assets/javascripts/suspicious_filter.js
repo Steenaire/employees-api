@@ -1,9 +1,10 @@
-angular.module("app").filter('suspicious', [function () {
-  return function(employees) {
+angular.module("suspiciousEmployees", []).filter('suspicious', [function () {
+  return function(employees,age) {
+
     var dateToday = new Date();
     var yyyy = dateToday.getFullYear();
 
-    var cutoffYyyy = yyyy-15; //Return everybody who is too young to legally work
+    var cutoffYyyy = yyyy-age; //Return everybody who is too young to legally work
 
     var youngsters = [];
 

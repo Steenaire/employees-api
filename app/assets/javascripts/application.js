@@ -15,5 +15,6 @@
 //= require angular.min
 //= require angular-rails-templates
 //= require_tree ../templates
+//= require suspicious_filter
 //= require app
 //= require_tree .

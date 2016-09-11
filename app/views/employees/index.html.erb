@@ -1,12 +1,13 @@
 <div ng-app="app">
   <team-rocket></team-rocket>
   <div ng-controller="employeeCtrl" ng-init="setup()">
+  Find employees younger than:<input ng-model="threshold"></input>
     <table>
       <tr>
         <th ng-click="toggleOrder('first_name')">First Name</th>
         <th ng-click="toggleOrder('last_name')">Last Name</th>
       </tr>
-      <tr ng-repeat="employee in employees | suspicious | orderBy: orderAttribute:descending ">
+      <tr ng-repeat="employee in employees | suspicious : threshold | orderBy: orderAttribute:descending ">
         <td>{{employee.first_name}}</td>
         <td>{{employee.last_name}}</td>
       </tr>
